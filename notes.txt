@@ -1,0 +1,239 @@
+Lecture 1 and lecture 2(1st hour)
+
+This folder contains an example on shapes,
+to illustrate:
+
+x0. Hard and harder (Book opening)
+Design, OO, Reuse. Gave example with entrance design.
+x1. class and object, methods and data members
+x2. unit testing
+x3. inheritance:
+   Circle and Square, and Shape
+x4. function working with objects:
+   vector of of shapes, printing shapes
+x5. polymorphism: virtual, late binding
+x6. Incremental and iterative coding
+   (coding-refactoring cycles)
+
+UML should be used throughout the illustration.
+
+Problem. A program is needed for representing
+various 2D shapes including circles, squares,
+lines, etc. The program also computes sums of
+areas and perimeters of multiple shapes stored in
+a properly chosen container.
+
+Constraint: demonstrate the program through
+unit tests.
+
+When adding new features, we want to avoid changing
+existing code as much as possible
+
+Circle-> Circle area-> sum of areas of Circle
+repeat for squares
+repeat for circles and squares
+
+Lecture 2 (2 hrs): Introduction to Design patterns
+(minus Design, Design problem).
+Problem: Composite with shapes
+
+Week 2
+
+Summary of wk 1
+Program to an implementation (class)
+Cover basic object concepts and notations -
+"Specifying Object Implementations"
+Recite: p18
+
+Evolution
+When is a design stable?
+It is when you can extend it by adding
+similar things without
+changing the existing code.
+So when is  areaSum stable?
+It is so when you can have it compute
+area of any newly added
+shape without changing its code and
+other shapes code.
+
+So our goal has been making areaSum stable
+
+We need inheritance, virtual, overriding,
+pointer to object, container
+Polymorphism = inheritance + virtual +
+               override + pointer or ref to base class
+
+"Program to an interface, not an implementation."
+
+Anticipating pattern -
+problem: make area sum and existing classes stable
+Solution: polymorphism
+Consequence: new shapes added without changing existing code
+At this stage, we say that polymorphism solves our design problem
+
+Onward composite pattern
+
+HW#1
+Previously, a program solving the following has been written:
+
+    Problem. A program is needed for representing
+    various 2D shapes including circles, squares,
+    lines, etc. The program also computes sums of
+    areas and perimeters of multiple shapes stored in
+    a properly chosen container.
+
+Making use of the program in of 0922-2015, complete the following requirements
+(1) Add Rectangle class to Shape family.
+(2) We need Graphics objects. A Graphics object is either a SimpleGraphics object,
+which refers to an object of the Shape family, or can be a CompositeGraphics objects,
+which refers to number of Graphics objects.
+(3) A Graphics object has a bounding box which is a Rectangle. Bounding boxes for circle,
+square, and rectangle are specified in the unit tests.
+(4) Similarly, bounding boxes for Graphics objects are specified in the unit tests.
+
+(a)  I have written 10 unit tests. Your job is to add code to project Shapes0915
+    (as of 0922-2015)so that the program compiles correctly and the tests pass.
+    (90 points; 9 points for passing a test)
+(b) Draw a UML class diagram for Shape family and Graphics family. Include in your
+    diagram the member functions and data members used in these programs. (10 points)
+
+Week 3: typhoon, no class
+
+week 4:
+Other first principles: composition, delegate, generics
+
+hour 1&2.
+review of Hw1
+0 How to read ref solution?
+1 student question -> virtual and pure virtual (2 slides)
+2 Composite relies on polymorphism and composition.
+3 Composite works best for data objects that are created,
+manipulated, and destroyed dynamically. A generative,
+recursive mechanism.
+Examples: Groupings of Graphics created in a drawing
+          application.
+4 Go through the Composite pattern
+5 Explain composition in SimpleGraphics->Shape
+
+"Favor object composition over class inheritance.
+
+    How to have abstract class with methods with default implementation,
+    but not allowing instance to be created?
+    An pure virtual method prevents default implementation.
+    1. protected constructor
+    2. public, virtual destructor: when you want polymorphic subclass through base
+       class pointer (avoiding memory leak)
+    3. virtual method with default
+    4. subclassing with public inheritance
+    see this example in the code example in Composite.
+    exercise in class: prevents Graphics class to have instances.
+
+*Design
+The composition from SimpleGraphics ->
+Shape is a design choice.
+Alternative: impose Composite on Shape family.
+
+But then what about making pictures part
+of the composition?
+Would making picture a shape make sense?
+(What does shape and picture have in common?)
+
+Context: recursive composite objects with a tree
+structure are created from different types
+of primitives. New, unknown primitives may
+be added to the composite.
+
+Forces:
+1. you want composition to be simple,
+   so make picture a shape.
+2. shape and picture are sufficiently
+    different that picture should not be a shape.
+
+Solution:
+(a) Use composition from composite to
+   shape and picture.
+(b) Make shape and picture different families.
+
+Consequences:
+*Easy to add new primitives to the composite
+*Can have new type of composite hierarchy created as needed, e.g., solid models
+from shapes.
+* keeps shapes, pictures. etc, separated.
+
+Week 5
+
+Add operations to Graphics
+(1) Adding the operation to Graphics family alone.
+(2) Adding the operation outside Graphics by
+    applying the Visitor pattern.
+
+Example
+Problem:
+  Compute the total area of primitive shapes in
+  a Graphics object
+
+Forces:
+a. Want to use simple design
+b. Want to keep interface of Graphics simple
+
+Consequences
+(1) Simple design indeed, but Graphics interface
+    bloats as you add more operations.
+
+    Must find reasonable default operation that are
+    applicable to objects in the tree.
+
+    Graphics provide the structure (tree),
+    we may need to have many operations
+    working on the tree.
+
+(2) All operations to be performed on the tree structure
+    are conducted in the same way.
+
+    Operation is placed outside Graphics,
+    making the structure simple. Graphics
+    keeps only the essential structure maintenance
+    operations: add, delete, boundingBox.
+
+    Operations performed more indirectly
+    and are more difficult to understand.
+
+describe (* example in class)
+
+getGraphicsAt(Point p):
+  retrieve all composites and primitives that include
+  p in its bounding box by the order they are stored in the tree
+
+sequence diagram: shows object interaction
+class diagram: show how classes are related
+
+Visitor pattern.
+
+HW#2
+distributed: 1006-2015, in class
+due: 1013-2015, 11:59 pm
+Previously in HW#1, you wrote a program that composes Graphics
+objects, where a SimpleGraphics object points to a Shape object.
+
+Making use of the program of 1006-2015, complete the following requirements
+(1) Make AreaVisitor subclass of the abstract class GraphicsVisitor.
+    GraphicsVisitor should declare the interface operations of a
+    visitor.
+(2) Add an operation "describe" to Graphics through an object of class
+    DescriptionVisitor, which is a subclass of GraphicsVisitor.
+(3) In supporting the operation "describe", you may need to add additional
+    member functions. For example, method "describe" which produces for a Circle
+    of center (0,0) and radius 2)the string "C(0,0,2)".
+
+(a) I have written 5 unit tests. Your job is to add code to project as of 1006-2015
+    so that the program compiles correctly and the tests pass.
+    (90 points; 18 points for passing a test)
+(b) Draw a UML class diagram for Shape family, Graphics family, and the Visitor family.
+    Include in your diagram the member functions and data members used in these
+    programs. (10 points)
+
+week 6
+hw2 review
+The Maze Game
+Factory method
+Builder

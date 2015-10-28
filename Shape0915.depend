@@ -1,0 +1,400 @@
+# depslib dependency file v1.0
+1442289568 source:d:\ycc\programming\cpp\shape\shape0915\main.cpp
+	"cppunitlite/TestHarness.h"
+	"Circle.h"
+	<vector>
+
+1406752454 d:\ycc\programming\cpp\shape\shape0915\cppunitlite\testharness.h
+	"Test.h"
+	"TestResult.h"
+	"Failure.h"
+	"TestRegistry.h"
+
+1409082726 d:\ycc\programming\cpp\shape\shape0915\cppunitlite\test.h
+	<cmath>
+	"SimpleString.h"
+
+1406752452 d:\ycc\programming\cpp\shape\shape0915\cppunitlite\simplestring.h
+
+1406752454 d:\ycc\programming\cpp\shape\shape0915\cppunitlite\testresult.h
+
+1406752452 d:\ycc\programming\cpp\shape\shape0915\cppunitlite\failure.h
+	"SimpleString.h"
+
+1406752454 d:\ycc\programming\cpp\shape\shape0915\cppunitlite\testregistry.h
+
+1442289780 d:\ycc\programming\cpp\shape\shape0915\circle.h
+	<vector>
+
+1442289813 source:d:\ycc\programming\cpp\shape\shape0915\circle.cpp
+	"Circle.h"
+
+1443269959 source:c:\users\yu chin cheng\desktop\shape0915\circle.cpp
+	"Circle.h"
+	"Rectangle.h"
+	<sstream>
+
+1443269549 c:\users\yu chin cheng\desktop\shape0915\circle.h
+	"Shape.h"
+
+1444979545 source:c:\users\yu chin cheng\desktop\shape0915\main.cpp
+	"cppunitlite/TestHarness.h"
+	"Circle.h"
+	"Square.h"
+	"Rectangle.h"
+	"Graphics.h"
+	"SimpleGraphics.h"
+	"CompositeGraphics.h"
+	"util.h"
+	<string>
+	<vector>
+	"AreaVisitor.h"
+	"DescriptionVisitor.h"
+
+1406752454 c:\users\yu chin cheng\desktop\shape0915\cppunitlite\testharness.h
+	"Test.h"
+	"TestResult.h"
+	"Failure.h"
+	"TestRegistry.h"
+
+1409082726 c:\users\yu chin cheng\desktop\shape0915\cppunitlite\test.h
+	<cmath>
+	"SimpleString.h"
+
+1406752452 c:\users\yu chin cheng\desktop\shape0915\cppunitlite\simplestring.h
+
+1406752454 c:\users\yu chin cheng\desktop\shape0915\cppunitlite\testresult.h
+
+1406752452 c:\users\yu chin cheng\desktop\shape0915\cppunitlite\failure.h
+	"SimpleString.h"
+
+1406752454 c:\users\yu chin cheng\desktop\shape0915\cppunitlite\testregistry.h
+
+1443923774 c:\users\yu chin cheng\desktop\shape0915\shape.h
+	<string>
+
+1443923842 c:\users\yu chin cheng\desktop\shape0915\square.h
+	"Shape.h"
+
+1443270229 source:c:\users\yu chin cheng\desktop\shape0915\square.cpp
+	"Square.h"
+	"Rectangle.h"
+	<sstream>
+	<string>
+
+1442628776 c:\users\yu chin cheng\desktop\shape0915\util.h
+	"Shape.h"
+	<vector>
+
+1443222830 source:c:\users\yu chin cheng\desktop\shape0915\util.cpp
+	"util.h"
+
+1443270339 c:\users\yu chin cheng\desktop\shape0915\rectangle.h
+	"Shape.h"
+
+1443331658 source:c:\users\yu chin cheng\desktop\shape0915\rectangle.cpp
+	"Rectangle.h"
+	<sstream>
+
+1444025637 c:\users\yu chin cheng\desktop\shape0915\graphics.h
+
+1443922522 c:\users\yu chin cheng\desktop\shape0915\simplegraphics.h
+	"Graphics.h"
+	"Shape.h"
+	<iostream>
+
+1443922583 c:\users\yu chin cheng\desktop\shape0915\compositegraphics.h
+	"Graphics.h"
+	<vector>
+	"GraphicsVisitor.h"
+
+1443930554 source:c:\users\yu chin cheng\desktop\shape0915\compositegraphics.cpp
+	"CompositeGraphics.h"
+	<algorithm>
+	"Rectangle.h"
+	"GraphicsVisitor.h"
+	"AreaVisitor.h"
+
+1444979594 c:\users\yu chin cheng\desktop\shape0915\areavisitor.h
+	"GraphicsVisitor.h"
+
+1444979518 source:c:\users\yu chin cheng\desktop\shape0915\areavisitor.cpp
+	"AreaVisitor.h"
+	"SimpleGraphics.h"
+	"CompositeGraphics.h"
+
+1443922744 source:c:\users\yu chin cheng\desktop\shape0915\graphics.cpp
+	"Graphics.h"
+	"Rectangle.h"
+	<string>
+	"AreaVisitor.h"
+
+1443926325 source:c:\users\yu chin cheng\desktop\shape0915\simplegraphics.cpp
+	"SimpleGraphics.h"
+	"Rectangle.h"
+	"AreaVisitor.h"
+
+1443930944 c:\users\yu chin cheng\desktop\shape0915\graphicsvisitor.h
+
+1443930526 source:c:\users\yu chin cheng\desktop\shape0915\descriptionvisitor.cpp
+	"DescriptionVisitor.h"
+	"SimpleGraphics.h"
+	"CompositeGraphics.h"
+	"Rectangle.h"
+
+1443930965 c:\users\yu chin cheng\desktop\shape0915\descriptionvisitor.h
+	"GraphicsVisitor.h"
+	"Graphics.h"
+	<string>
+
+1444979518 source:c:\users\yu chin cheng\desktop\hw2refsol-2015f\areavisitor.cpp
+	"AreaVisitor.h"
+	"SimpleGraphics.h"
+	"CompositeGraphics.h"
+
+1444979594 c:\users\yu chin cheng\desktop\hw2refsol-2015f\areavisitor.h
+	"GraphicsVisitor.h"
+
+1443930944 c:\users\yu chin cheng\desktop\hw2refsol-2015f\graphicsvisitor.h
+
+1443922522 c:\users\yu chin cheng\desktop\hw2refsol-2015f\simplegraphics.h
+	"Graphics.h"
+	"Shape.h"
+	<iostream>
+
+1444025637 c:\users\yu chin cheng\desktop\hw2refsol-2015f\graphics.h
+
+1443923774 c:\users\yu chin cheng\desktop\hw2refsol-2015f\shape.h
+	<string>
+
+1443922583 c:\users\yu chin cheng\desktop\hw2refsol-2015f\compositegraphics.h
+	"Graphics.h"
+	<vector>
+	"GraphicsVisitor.h"
+
+1443269959 source:c:\users\yu chin cheng\desktop\hw2refsol-2015f\circle.cpp
+	"Circle.h"
+	"Rectangle.h"
+	<sstream>
+
+1443269549 c:\users\yu chin cheng\desktop\hw2refsol-2015f\circle.h
+	"Shape.h"
+
+1443270339 c:\users\yu chin cheng\desktop\hw2refsol-2015f\rectangle.h
+	"Shape.h"
+
+1443930554 source:c:\users\yu chin cheng\desktop\hw2refsol-2015f\compositegraphics.cpp
+	"CompositeGraphics.h"
+	<algorithm>
+	"Rectangle.h"
+	"GraphicsVisitor.h"
+	"AreaVisitor.h"
+
+1443930526 source:c:\users\yu chin cheng\desktop\hw2refsol-2015f\descriptionvisitor.cpp
+	"DescriptionVisitor.h"
+	"SimpleGraphics.h"
+	"CompositeGraphics.h"
+	"Rectangle.h"
+
+1443930965 c:\users\yu chin cheng\desktop\hw2refsol-2015f\descriptionvisitor.h
+	"GraphicsVisitor.h"
+	"Graphics.h"
+	<string>
+
+1443922744 source:c:\users\yu chin cheng\desktop\hw2refsol-2015f\graphics.cpp
+	"Graphics.h"
+	"Rectangle.h"
+	<string>
+	"AreaVisitor.h"
+
+1444979545 source:c:\users\yu chin cheng\desktop\hw2refsol-2015f\main.cpp
+	"cppunitlite/TestHarness.h"
+	"Circle.h"
+	"Square.h"
+	"Rectangle.h"
+	"Graphics.h"
+	"SimpleGraphics.h"
+	"CompositeGraphics.h"
+	"util.h"
+	<string>
+	<vector>
+	"AreaVisitor.h"
+	"DescriptionVisitor.h"
+
+1406752454 c:\users\yu chin cheng\desktop\hw2refsol-2015f\cppunitlite\testharness.h
+	"Test.h"
+	"TestResult.h"
+	"Failure.h"
+	"TestRegistry.h"
+
+1409082726 c:\users\yu chin cheng\desktop\hw2refsol-2015f\cppunitlite\test.h
+	<cmath>
+	"SimpleString.h"
+
+1406752452 c:\users\yu chin cheng\desktop\hw2refsol-2015f\cppunitlite\simplestring.h
+
+1406752454 c:\users\yu chin cheng\desktop\hw2refsol-2015f\cppunitlite\testresult.h
+
+1406752452 c:\users\yu chin cheng\desktop\hw2refsol-2015f\cppunitlite\failure.h
+	"SimpleString.h"
+
+1406752454 c:\users\yu chin cheng\desktop\hw2refsol-2015f\cppunitlite\testregistry.h
+
+1443923842 c:\users\yu chin cheng\desktop\hw2refsol-2015f\square.h
+	"Shape.h"
+
+1442628776 c:\users\yu chin cheng\desktop\hw2refsol-2015f\util.h
+	"Shape.h"
+	<vector>
+
+1443331658 source:c:\users\yu chin cheng\desktop\hw2refsol-2015f\rectangle.cpp
+	"Rectangle.h"
+	<sstream>
+
+1443926325 source:c:\users\yu chin cheng\desktop\hw2refsol-2015f\simplegraphics.cpp
+	"SimpleGraphics.h"
+	"Rectangle.h"
+	"AreaVisitor.h"
+
+1443270229 source:c:\users\yu chin cheng\desktop\hw2refsol-2015f\square.cpp
+	"Square.h"
+	"Rectangle.h"
+	<sstream>
+	<string>
+
+1443222830 source:c:\users\yu chin cheng\desktop\hw2refsol-2015f\util.cpp
+	"util.h"
+
+1444979520 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\areavisitor.cpp
+	"AreaVisitor.h"
+	"SimpleGraphics.h"
+	"CompositeGraphics.h"
+
+1444979596 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\areavisitor.h
+	"GraphicsVisitor.h"
+
+1443930946 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\graphicsvisitor.h
+
+1443922524 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\simplegraphics.h
+	"Graphics.h"
+	"Shape.h"
+	<iostream>
+
+1444025638 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\graphics.h
+
+1443923776 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\shape.h
+	<string>
+
+1443922584 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\compositegraphics.h
+	"Graphics.h"
+	<vector>
+	"GraphicsVisitor.h"
+
+1443269960 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\circle.cpp
+	"Circle.h"
+	"Rectangle.h"
+	<sstream>
+
+1443269550 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\circle.h
+	"Shape.h"
+
+1443270340 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\rectangle.h
+	"Shape.h"
+
+1443930556 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\compositegraphics.cpp
+	"CompositeGraphics.h"
+	<algorithm>
+	"Rectangle.h"
+	"GraphicsVisitor.h"
+	"AreaVisitor.h"
+
+1443930528 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\descriptionvisitor.cpp
+	"DescriptionVisitor.h"
+	"SimpleGraphics.h"
+	"CompositeGraphics.h"
+	"Rectangle.h"
+
+1443930966 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\descriptionvisitor.h
+	"GraphicsVisitor.h"
+	"Graphics.h"
+	<string>
+
+1443922746 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\graphics.cpp
+	"Graphics.h"
+	"Rectangle.h"
+	<string>
+	"AreaVisitor.h"
+
+1445963106 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\main.cpp
+	"cppunitlite/TestHarness.h"
+	"Circle.h"
+	"Square.h"
+	"Rectangle.h"
+	"Graphics.h"
+	"SimpleGraphics.h"
+	"CompositeGraphics.h"
+	"util.h"
+	<string>
+	<vector>
+	"AreaVisitor.h"
+	"DescriptionVisitor.h"
+	"utHW3.h"
+
+1406752454 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\cppunitlite\testharness.h
+	"Test.h"
+	"TestResult.h"
+	"Failure.h"
+	"TestRegistry.h"
+
+1409082726 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\cppunitlite\test.h
+	<cmath>
+	"SimpleString.h"
+
+1406752452 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\cppunitlite\simplestring.h
+
+1406752454 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\cppunitlite\testresult.h
+
+1406752452 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\cppunitlite\failure.h
+	"SimpleString.h"
+
+1406752454 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\cppunitlite\testregistry.h
+
+1443923844 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\square.h
+	"Shape.h"
+
+1442628778 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\util.h
+	"Shape.h"
+	<vector>
+
+1443331660 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\rectangle.cpp
+	"Rectangle.h"
+	<sstream>
+
+1443926326 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\simplegraphics.cpp
+	"SimpleGraphics.h"
+	"Rectangle.h"
+	"AreaVisitor.h"
+
+1443270230 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\square.cpp
+	"Square.h"
+	"Rectangle.h"
+	<sstream>
+	<string>
+
+1443222832 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\util.cpp
+	"util.h"
+
+1446015756 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\uthw3.h
+	"cppunitlite/TestHarness.h"
+	"GraphicsFactory.h"
+
+1446036360 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\graphicsfactory.h
+	<string>
+	"Graphics.h"
+	<fstream>
+	<iostream>
+	<vector>
+
+1445973997 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\graphicsfactory.cpp
+	"GraphicsFactory.h"
+
