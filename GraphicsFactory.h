@@ -16,6 +16,8 @@ class GraphicsFactory {
         void compose (); /* implement lines 5, 6 as well as line 9 */
     private:
         vector<string> obj;
+
+    /////s
 };
 
 
