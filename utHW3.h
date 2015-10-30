@@ -13,8 +13,8 @@ TEST(GraphicsFactory, buildGraphicsFromFile) {
     try {
         g.buildGraphicsFromFile("f1.txt");
         //FAIL("exception not thrown");
-    } catch (string st) {
-        CHECK(string("file does not exist.")==st);
+    } catch (std::string st) {
+        CHECK(std::string("file does not exist.")==st);
     }
 
     //CHECK(a correctly constructed CompositeGraphics);

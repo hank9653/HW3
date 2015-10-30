@@ -36,6 +36,8 @@
 		<Unit filename="DescriptionVisitor.h" />
 		<Unit filename="Graphics.cpp" />
 		<Unit filename="Graphics.h" />
+		<Unit filename="GraphicsFactory.cpp" />
+		<Unit filename="GraphicsFactory.h" />
 		<Unit filename="GraphicsVisitor.h" />
 		<Unit filename="Rectangle.cpp" />
 		<Unit filename="Rectangle.h" />
@@ -46,6 +48,7 @@
 		<Unit filename="Square.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="notes.txt" />
+		<Unit filename="utHW3.h" />
 		<Unit filename="util.cpp" />
 		<Unit filename="util.h" />
 		<Extensions>
