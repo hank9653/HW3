@@ -26,7 +26,7 @@ TEST(GraphicsFactory, buildGraphicsFromFile) {
     } catch (std::string st) {
         CHECK(std::string("file does not exist.")==st);
     }
-    cout<<dv.getDescription();
+    //cout<<dv.getDescription();
     CHECK(ans==dv.getDescription());
 }
 

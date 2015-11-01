@@ -35,6 +35,7 @@ class GraphicsFactory {
         stack<Graphics*> compositeObj;
         stack<int> level;
         stack<int> prelevel;
+        bool sublevel=true;
 
     /////s
 };

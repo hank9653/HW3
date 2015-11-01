@@ -9,18 +9,25 @@ Graphics * GraphicsFactory::buildGraphicsFromFile(const char * fileName){
         while (std::getline(file, str))
         {
             int curlevel=currentlevel(str);
+            level.push(curlevel);
             if (curlevel<previouslevel()){
                 while(previouslevel()>curlevel){
+                        /*DescriptionVisitor dv;
+                        obj.top()->accept(dv);
+                        cout<<level.top()<<dv.getDescription()<<endl;*/
                     compositeObj.push(obj.top());
                     //cout<<obj.top()->shape()->describe()<<compositeObj.top()->shape()->describe()<<endl;
                     level.pop();
                     obj.pop();
                 }
+                level.top()=curlevel;
+                sublevel=false;
                 compose();//compose into a CoobjmpositeGraphics object
             }
             obj.push(extractGraphicsFromOneLine(str,curlevel));
-            level.push(curlevel);
+            //sublevel=false;
         }
+        sublevel=true;
         compose();
         return obj.top();
     }
@@ -94,19 +101,25 @@ Graphics * GraphicsFactory::extractGraphicsFromOneLine(std::string & contents, i
 }/*implement line 3 */
 
 void GraphicsFactory::compose(){
-    DescriptionVisitor dv;
+    //DescriptionVisitor dv;
     if(!compositeObj.empty()){
         while(!compositeObj.empty()){
             Graphics *g = obj.top();
             obj.pop();
             g->add(compositeObj.top());
             obj.push(g);
+            //level.pop();
             //obj.top()=obj.top()->add(new SimpleGraphics(new Rectangle(1,1,1,1)));
             compositeObj.pop();
         }
+        if(sublevel){
+            compose();
+        }
+
     }else{
-        while(obj.size()>1){
-            while(previouslevel()>0){
+        int current=level.top();
+        if(current!=0){
+            while(current==level.top()){
                 compositeObj.push(obj.top());
                 level.pop();
                 obj.pop();
@@ -115,7 +128,7 @@ void GraphicsFactory::compose(){
         }
     }
 
-    obj.top()->accept(dv);
+    //obj.top()->accept(dv);
     //cout<<dv.getDescription()<<endl;
 }/* implement lines 5, 6 as well as line 9 */
 
@@ -136,9 +149,10 @@ int GraphicsFactory::previouslevel(){
     int previouslevel=0;
     int tmp;
     if(level.size()>1){
+        tmp=level.top();
+        level.pop();
         previouslevel=level.top();
-    }else{
-
+        level.push(tmp);
     }
     return previouslevel;
 }
