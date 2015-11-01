@@ -10,7 +10,9 @@ Graphics * GraphicsFactory::buildGraphicsFromFile(const char * fileName){
         string tmp;
         while (std::getline(file, str))
         {
+
             int curlevel=currentlevel(str);
+            extractGraphicsFromOneLine(str,curlevel);
             if (curlevel<previouslevel()){
                 string simpleGraphics;
                 simpleGraphics="]"+simpleGraphics;
@@ -22,16 +24,16 @@ Graphics * GraphicsFactory::buildGraphicsFromFile(const char * fileName){
                         simpleGraphics=","+simpleGraphics;
                     }
                     //compose();compose into a CompositeGraphics object
+                    //printComposite(obj,level);
                 }
                 simpleGraphics="["+simpleGraphics;
                 obj.top()+=removeTrim(simpleGraphics);
                 //cout<<level.top()<<" "<<obj.top()<<endl;
-                printComposite(obj,level);
             }
             obj.push(removeTrim(str));
             level.push(curlevel);
             //cout<<level.top()<<" "<<obj.top()<<endl;
-            printComposite(obj,level);
+            //printComposite(obj,level);
         }
 
         int curlevel=level.top();
@@ -48,7 +50,7 @@ Graphics * GraphicsFactory::buildGraphicsFromFile(const char * fileName){
         simpleGraphics="["+simpleGraphics;
         obj.top()+=removeTrim(simpleGraphics);
         //cout<<level.top()<<" "<<obj.top()<<endl;
-        printComposite(obj,level);
+        //printComposite(obj,level);
     }
 }/*implement the pseudo code */
 
@@ -68,7 +70,60 @@ string GraphicsFactory::fileContentsAsString(const char * fileName){
 }/* implement line 1 of pseudo code */
 
 Graphics * GraphicsFactory::extractGraphicsFromOneLine(std::string & contents, int & level){
+    string str;
+    string value;
+    int data[4];
+    bool start=false;
+    int a[4];
+    for(int i=(level)*2;i<contents.size();i++){
+        if(contents[i]=='(')
+        {
+            break;
+        }
+        if(contents[i]!=' '){
+            str+=contents[i];
+        }
+    }
 
+    for(int i=(level)*2;i<contents.size();i++){
+        if(contents[i]==')')
+        {
+            break;
+        }
+        if(start==true){
+            value+=contents[i];
+        }
+        if(contents[i]=='(')
+        {
+            start=true;
+        }
+    }
+
+    char seps[] = ",";
+    char *token;
+    int i=0;
+    token = strtok( &value[0], seps );
+    while( token != NULL )
+    {
+        /* Do your thing */
+        data[i]=stringToInt(token);
+        token = strtok( NULL, seps );
+        i++;
+    }
+
+    if(str=="CompR"){
+            cout<<"CompR"<<endl;
+       return new CompositeGraphics();
+    }else if(str=="C"){
+        cout<<"C"<<endl;
+       return new SimpleGraphics(new Circle(data[0],data[1],data[2]));
+    }else if(str=="S"){
+        cout<<"S"<<endl;
+       return new SimpleGraphics(new Square(data[0],data[1],data[2]));
+    }else if(str=="R"){
+        cout<<"R"<<endl;
+       return new SimpleGraphics(new Rectangle(data[0],data[1],data[2],data[3]));
+    }
 }/*implement line 3 */
 
 void GraphicsFactory::compose(){
@@ -119,4 +174,10 @@ void GraphicsFactory::printComposite(stack<string> obj,stack<int> level)
     cout<<endl<<endl;
 }
 
+int GraphicsFactory::stringToInt(string str){
+    int val;
+    istringstream is(str);
+    is>>val;
+    return val;
+}
 

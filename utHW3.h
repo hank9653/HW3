@@ -30,6 +30,8 @@ TEST(GraphicsFactory, fileContentsAsString) {
     ans += std::string("    S(-2,-2,2)\n");
     ans += std::string("  R(-1,-1,1,3)\n");
     CHECK(ans==g.fileContentsAsString("f1.txt"));
+
+//    switch(string str)
 }
 
 

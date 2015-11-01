@@ -2,10 +2,18 @@
 #define GRAPHICSFACTORY_H_INCLUDED
 #include <string>
 #include "Graphics.h"
+#include "CompositeGraphics.h"
+#include "SimpleGraphics.h"
+#include "Circle.h"
+#include "Square.h"
+#include "Rectangle.h"
 #include <fstream>
 #include <iostream>
 #include <vector>
 #include <stack>
+#include <string.h>
+#include <stdio.h>
+#include<sstream>
 
 using namespace std;
 
@@ -19,8 +27,10 @@ class GraphicsFactory {
         int previouslevel();
         string removeTrim(string str);
         void printComposite(stack<string> obj,stack<int> level);
+        int stringToInt(string str);
     private:
         vector<string> obj;
+        vector<Graphics*> graphicsObj;
         stack<int> level;
 
     /////s
