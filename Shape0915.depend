@@ -14,7 +14,7 @@
 	"Shape.h"
 	<iostream>
 
-1444025638 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\graphics.h
+1446368460 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\graphics.h
 
 1443923776 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\shape.h
 	<string>
@@ -53,7 +53,7 @@
 	"Graphics.h"
 	<string>
 
-1443922746 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\graphics.cpp
+1446364945 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\graphics.cpp
 	"Graphics.h"
 	"Rectangle.h"
 	<string>
@@ -100,11 +100,12 @@
 	"Shape.h"
 	<vector>
 
-1446290547 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\uthw3.h
+1446369778 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\uthw3.h
 	"cppunitlite/TestHarness.h"
 	"GraphicsFactory.h"
+	"DescriptionVisitor.h"
 
-1446327184 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\graphicsfactory.h
+1446367462 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\graphicsfactory.h
 	<string>
 	"Graphics.h"
 	"CompositeGraphics.h"
@@ -119,6 +120,7 @@
 	<string.h>
 	<stdio.h>
 	<sstream>
+	"DescriptionVisitor.h"
 
 1443331660 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\rectangle.cpp
 	"Rectangle.h"
@@ -138,6 +140,6 @@
 1443222832 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\util.cpp
 	"util.h"
 
-1446327219 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\graphicsfactory.cpp
+1446369638 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\graphicsfactory.cpp
 	"GraphicsFactory.h"
 

@@ -14,6 +14,7 @@
 #include <string.h>
 #include <stdio.h>
 #include<sstream>
+#include "DescriptionVisitor.h"
 
 using namespace std;
 
@@ -29,9 +30,11 @@ class GraphicsFactory {
         void printComposite(stack<string> obj,stack<int> level);
         int stringToInt(string str);
     private:
-        vector<string> obj;
-        vector<Graphics*> graphicsObj;
+        //<string> obj;
+        stack<Graphics*> obj;
+        stack<Graphics*> compositeObj;
         stack<int> level;
+        stack<int> prelevel;
 
     /////s
 };

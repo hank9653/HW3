@@ -6,7 +6,28 @@ Graphics * GraphicsFactory::buildGraphicsFromFile(const char * fileName){
     if(!file){
          throw string("file does not exist.");
     }else{
-        stack<string> obj;
+        while (std::getline(file, str))
+        {
+
+            int curlevel=currentlevel(str);
+            level.push(curlevel);
+            if (curlevel<previouslevel()){
+                while(previouslevel()>curlevel){
+                    compositeObj.push(obj.top());
+                    //cout<<obj.top()->shape()->describe()<<compositeObj.top()->shape()->describe()<<endl;
+                    level.pop();
+                    obj.pop();
+                }
+                compose();//compose into a CoobjmpositeGraphics object
+            }
+            obj.push(extractGraphicsFromOneLine(str,curlevel));
+        }
+         compose();
+
+         return obj.top();
+        //cout<<level.top()<<" "<<obj.top()<<endl;
+        //printComposite(obj,level);
+        /*stack<string> obj;
         string tmp;
         while (std::getline(file, str))
         {
@@ -50,7 +71,7 @@ Graphics * GraphicsFactory::buildGraphicsFromFile(const char * fileName){
         simpleGraphics="["+simpleGraphics;
         obj.top()+=removeTrim(simpleGraphics);
         //cout<<level.top()<<" "<<obj.top()<<endl;
-        //printComposite(obj,level);
+        //printComposite(obj,level);*/
     }
 }/*implement the pseudo code */
 
@@ -74,7 +95,6 @@ Graphics * GraphicsFactory::extractGraphicsFromOneLine(std::string & contents, i
     string value;
     int data[4];
     bool start=false;
-    int a[4];
     for(int i=(level)*2;i<contents.size();i++){
         if(contents[i]=='(')
         {
@@ -112,22 +132,38 @@ Graphics * GraphicsFactory::extractGraphicsFromOneLine(std::string & contents, i
     }
 
     if(str=="CompR"){
-            cout<<"CompR"<<endl;
        return new CompositeGraphics();
     }else if(str=="C"){
-        cout<<"C"<<endl;
        return new SimpleGraphics(new Circle(data[0],data[1],data[2]));
     }else if(str=="S"){
-        cout<<"S"<<endl;
        return new SimpleGraphics(new Square(data[0],data[1],data[2]));
     }else if(str=="R"){
-        cout<<"R"<<endl;
        return new SimpleGraphics(new Rectangle(data[0],data[1],data[2],data[3]));
     }
 }/*implement line 3 */
 
 void GraphicsFactory::compose(){
+    DescriptionVisitor dv;
+    if(!compositeObj.empty()){
+        while(!compositeObj.empty()){
+            Graphics *g = obj.top();
+            obj.pop();
+            g->add(compositeObj.top());
+            obj.push(g);
+            //obj.top()=obj.top()->add(new SimpleGraphics(new Rectangle(1,1,1,1)));
+            compositeObj.pop();
+        }
+    }else{
+        while(obj.size()>1){
+            Graphics *g = obj.top();
+            obj.pop();
+            Graphics *c = obj.top();
+            c->add(g);
+        }
+    }
 
+    obj.top()->accept(dv);
+    cout<<dv.getDescription()<<endl;
 }/* implement lines 5, 6 as well as line 9 */
 
 
@@ -144,8 +180,12 @@ int GraphicsFactory::currentlevel(string str){
 }
 int GraphicsFactory::previouslevel(){
     int previouslevel=0;
-    if(!level.empty()){
+    int tmp;
+    if(level.size()>1){
+        tmp=level.top();
+        level.pop();
         previouslevel=level.top();
+        level.push(tmp);
     }
     return previouslevel;
 }
