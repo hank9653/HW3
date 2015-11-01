@@ -8,9 +8,7 @@ Graphics * GraphicsFactory::buildGraphicsFromFile(const char * fileName){
     }else{
         while (std::getline(file, str))
         {
-
             int curlevel=currentlevel(str);
-            level.push(curlevel);
             if (curlevel<previouslevel()){
                 while(previouslevel()>curlevel){
                     compositeObj.push(obj.top());
@@ -21,57 +19,10 @@ Graphics * GraphicsFactory::buildGraphicsFromFile(const char * fileName){
                 compose();//compose into a CoobjmpositeGraphics object
             }
             obj.push(extractGraphicsFromOneLine(str,curlevel));
-        }
-         compose();
-
-         return obj.top();
-        //cout<<level.top()<<" "<<obj.top()<<endl;
-        //printComposite(obj,level);
-        /*stack<string> obj;
-        string tmp;
-        while (std::getline(file, str))
-        {
-
-            int curlevel=currentlevel(str);
-            extractGraphicsFromOneLine(str,curlevel);
-            if (curlevel<previouslevel()){
-                string simpleGraphics;
-                simpleGraphics="]"+simpleGraphics;
-                while(previouslevel()>curlevel){
-                    simpleGraphics=obj.top()+simpleGraphics;
-                    level.pop();
-                    obj.pop();
-                    if(previouslevel()!=curlevel){
-                        simpleGraphics=","+simpleGraphics;
-                    }
-                    //compose();compose into a CompositeGraphics object
-                    //printComposite(obj,level);
-                }
-                simpleGraphics="["+simpleGraphics;
-                obj.top()+=removeTrim(simpleGraphics);
-                //cout<<level.top()<<" "<<obj.top()<<endl;
-            }
-            obj.push(removeTrim(str));
             level.push(curlevel);
-            //cout<<level.top()<<" "<<obj.top()<<endl;
-            //printComposite(obj,level);
         }
-
-        int curlevel=level.top();
-        string simpleGraphics;
-        simpleGraphics="]"+simpleGraphics;
-        while(level.size()>1){
-            simpleGraphics=obj.top()+simpleGraphics;
-            level.pop();
-            obj.pop();
-            if(previouslevel()!=0){
-                simpleGraphics=","+simpleGraphics;
-            }
-        }
-        simpleGraphics="["+simpleGraphics;
-        obj.top()+=removeTrim(simpleGraphics);
-        //cout<<level.top()<<" "<<obj.top()<<endl;
-        //printComposite(obj,level);*/
+        compose();
+        return obj.top();
     }
 }/*implement the pseudo code */
 
@@ -155,15 +106,17 @@ void GraphicsFactory::compose(){
         }
     }else{
         while(obj.size()>1){
-            Graphics *g = obj.top();
-            obj.pop();
-            Graphics *c = obj.top();
-            c->add(g);
+            while(previouslevel()>0){
+                compositeObj.push(obj.top());
+                level.pop();
+                obj.pop();
+            }
+            compose();//compose into a CoobjmpositeGraphics object
         }
     }
 
     obj.top()->accept(dv);
-    cout<<dv.getDescription()<<endl;
+    //cout<<dv.getDescription()<<endl;
 }/* implement lines 5, 6 as well as line 9 */
 
 
@@ -178,14 +131,14 @@ int GraphicsFactory::currentlevel(string str){
     }
     return currentlevel;
 }
+
 int GraphicsFactory::previouslevel(){
     int previouslevel=0;
     int tmp;
     if(level.size()>1){
-        tmp=level.top();
-        level.pop();
         previouslevel=level.top();
-        level.push(tmp);
+    }else{
+
     }
     return previouslevel;
 }
@@ -210,7 +163,6 @@ void GraphicsFactory::printComposite(stack<string> obj,stack<int> level)
         obj.pop();
         level.pop();
     }
-
     cout<<endl<<endl;
 }
 
