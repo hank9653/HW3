@@ -9,7 +9,7 @@
 
 1443930946 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\graphicsvisitor.h
 
-1443922524 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\simplegraphics.h
+1446453336 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\simplegraphics.h
 	"Graphics.h"
 	"Shape.h"
 	<iostream>
@@ -59,7 +59,7 @@
 	<string>
 	"AreaVisitor.h"
 
-1446373088 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\main.cpp
+1446430742 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\main.cpp
 	"cppunitlite/TestHarness.h"
 	"Circle.h"
 	"Square.h"
@@ -100,12 +100,12 @@
 	"Shape.h"
 	<vector>
 
-1446407894 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\uthw3.h
+1446471187 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\uthw3.h
 	"cppunitlite/TestHarness.h"
 	"GraphicsFactory.h"
 	"DescriptionVisitor.h"
 
-1446407199 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\graphicsfactory.h
+1446430858 c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\graphicsfactory.h
 	<string>
 	"Graphics.h"
 	"CompositeGraphics.h"
@@ -140,6 +140,6 @@
 1443222832 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\util.cpp
 	"util.h"
 
-1446407770 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\graphicsfactory.cpp
+1446430713 source:c:\users\ting-jhih\desktop\c_plusplus_progeam\hw2refsol-2015f\graphicsfactory.cpp
 	"GraphicsFactory.h"
 

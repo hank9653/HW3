@@ -4,7 +4,7 @@ Graphics * GraphicsFactory::buildGraphicsFromFile(const char * fileName){
     ifstream file(fileName);
     string str;
     if(!file){
-         throw string("file does not exist.");
+        throw string("file does not exist.");
     }else{
         while (std::getline(file, str))
         {
@@ -12,11 +12,7 @@ Graphics * GraphicsFactory::buildGraphicsFromFile(const char * fileName){
             level.push(curlevel);
             if (curlevel<previouslevel()){
                 while(previouslevel()>curlevel){
-                        /*DescriptionVisitor dv;
-                        obj.top()->accept(dv);
-                        cout<<level.top()<<dv.getDescription()<<endl;*/
                     compositeObj.push(obj.top());
-                    //cout<<obj.top()->shape()->describe()<<compositeObj.top()->shape()->describe()<<endl;
                     level.pop();
                     obj.pop();
                 }
@@ -25,7 +21,6 @@ Graphics * GraphicsFactory::buildGraphicsFromFile(const char * fileName){
                 compose();//compose into a CoobjmpositeGraphics object
             }
             obj.push(extractGraphicsFromOneLine(str,curlevel));
-            //sublevel=false;
         }
         sublevel=true;
         compose();
@@ -108,14 +103,11 @@ void GraphicsFactory::compose(){
             obj.pop();
             g->add(compositeObj.top());
             obj.push(g);
-            //level.pop();
-            //obj.top()=obj.top()->add(new SimpleGraphics(new Rectangle(1,1,1,1)));
             compositeObj.pop();
         }
         if(sublevel){
             compose();
         }
-
     }else{
         int current=level.top();
         if(current!=0){
@@ -127,7 +119,6 @@ void GraphicsFactory::compose(){
             compose();//compose into a CoobjmpositeGraphics object
         }
     }
-
     //obj.top()->accept(dv);
     //cout<<dv.getDescription()<<endl;
 }/* implement lines 5, 6 as well as line 9 */
@@ -155,29 +146,6 @@ int GraphicsFactory::previouslevel(){
         level.push(tmp);
     }
     return previouslevel;
-}
-
-string GraphicsFactory::removeTrim(string str){
-    string tmp;
-    for(int i=0;i<str.size();i++)
-    {
-        if(str[i]!=' ')
-        {
-            tmp+=str[i];
-        }
-    }
-    return tmp;
-}
-
-void GraphicsFactory::printComposite(stack<string> obj,stack<int> level)
-{
-    while (!obj.empty())
-    {
-        cout<<level.top()<<","<< obj.top()<<endl;
-        obj.pop();
-        level.pop();
-    }
-    cout<<endl<<endl;
 }
 
 int GraphicsFactory::stringToInt(string str){

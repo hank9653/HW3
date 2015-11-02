@@ -16,42 +16,6 @@ int main(int argc, char** argv) {
 	TestResult tr;
 	TestRegistry::runAllTests(tr);
 
-    /*stack<Graphics*> obj;
-
-    obj.push(new CompositeGraphics());
-
-    obj.push(new SimpleGraphics(new Circle(0,0,1)));
-
-    obj.push(new SimpleGraphics(new Square(-2,-2,2)));
-
-    obj.push(new SimpleGraphics(new Rectangle(-1,-1,1,3)));
-
-    while(obj.size()>1)
-    {
-        Graphics *g =obj.top();
-        obj.pop();
-    }*/
-
-
-   /* vector<Graphics*> obj;
-    for(int i=0;i<3;i++){
-        Graphics *g=new CompositeGraphics();
-        obj.push_back(g);
-    }
-//obj.push_back(new SimpleGraphics(new Circle(0,0,1)));
-    for(auto e:obj){
-            DescriptionVisitor dv;
-        try {
-             e->add(new SimpleGraphics(new Circle(0,0,1)));
-             e->accept(dv);
-            cout<<dv.getDescription()<<endl<<endl;
-        } catch (std::string s) {
-            //CHECK(std::string("Cannot add child")==s);
-            cout<<"456";
-        }
-    }
-*/
-
 	return 0;
 }
 

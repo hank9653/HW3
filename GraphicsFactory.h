@@ -26,18 +26,12 @@ class GraphicsFactory {
         void compose (); /* implement lines 5, 6 as well as line 9 */
         int currentlevel(string str);
         int previouslevel();
-        string removeTrim(string str);
-        void printComposite(stack<string> obj,stack<int> level);
         int stringToInt(string str);
     private:
-        //<string> obj;
         stack<Graphics*> obj;
         stack<Graphics*> compositeObj;
         stack<int> level;
-        stack<int> prelevel;
         bool sublevel=true;
-
-    /////s
 };
 
 
